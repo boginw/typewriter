@@ -1,0 +1,89 @@
+body{
+	margin:0px;
+	padding:0px;
+	background:url('assets/bg.png') no-repeat center center fixed;
+	background-size: cover;
+}
+#written, #ordatak{
+	width: 70%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+	font-size: 50px;
+	color: #686859;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	vertical-align:middle
+}
+
+#written .wrong, #ordatak .wrong{
+	color: #F00;
+}
+#written .selected, #ordatak .selected{
+	color: #0059B3;
+	border-bottom: 10px solid #0059B3;
+}
+#written .right, #ordatak .right{
+	color: #BBB;
+}
+.barContainer{
+	background-color: #D8D8D8;
+	height: 50px;
+	border-bottom:2px solid #6B6B6B;
+}
+.barContainer .bar{
+	background:url('assets/bar.png') repeat-x;
+	margin: 5px;
+	width: 350px;
+	height: 30px;
+	margin-left:auto;
+	margin-right:auto;
+	border:1px solid #6A6E5E;
+	line-height: 28px;
+	position: float;
+}
+.barContainer .next{
+	background:url('assets/next.png') repeat-x;
+	margin: 5px;
+	width: 32px;
+	height: 32px;
+	position: float;
+	float:left;
+	margin-left:10px;
+	line-height: 28px;
+}
+.barContainer .next:active{
+	background:url('assets/next-down.png') repeat-x;
+}
+.typer{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+	position: float;
+	float:left;
+}
+.stats{
+	display:block;
+	margin:0px;
+	padding:0px;
+	width:30%;
+	height:100%;
+	position: float;
+	float:right;
+	background-color:#bbb;
+	min-height: 100%; /* Mindesthöhe für moderne Browser */
+   
+}
+.inputter{
+	margin-left:auto;
+	margin-right:auto;
+	width:99%;
+	height:100%;
+	position: fixed;
+	opacity:0.0;
+}
+
+.clear
+ {
+      clear: both;
+}
