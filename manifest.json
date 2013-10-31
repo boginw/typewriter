@@ -1,14 +1,19 @@
 {
-  "name": "TypeWriter",
-  "description": "Learn to type in Faroese very fast.",
-  "version": "0.1",
-  "app": {
-    "background": {
-      "scripts": ["background.js"]
-    }
-  },
-  "icons": { "16": "icon-16.png", "128": "icon-128.png" },
-  "permissions": [
-    "file:///*"
-  ]
+	"name": "TypeWriter",
+	"description": "Learn to type in Faroese very fast.",
+	"version": "0.2",
+	"manifest_version": 2,
+	"minimum_chrome_version": "30",
+	"app": {
+		"background": {
+			"scripts": ["background.js"]
+		}
+	},
+	"icons": { "16": "icon-16.png", "128": "icon-128.png" },
+	"offline_enabled": true,
+	"permissions": [
+		"storage",
+		"<all_urls>"
+	],
+	"key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwhGKZ4KMgoHDmBGs+BrYueDkiiPAt7QjHbcxeNs3JBaPah/nNsz8e4E38TeEKNyHg+0DoVQlV6gvmuXy/bAbpCBSk3/y+/J5TFCjSgVLhm7nQPeE3RIR2/kVZIaY1YIabxqdC4N0RmAef+EBR+WB4RqFsV78TpzgpNqDinkhfPwIDAQAB"	
 }
