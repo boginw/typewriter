@@ -31,6 +31,7 @@ body{
 	border-bottom:2px solid #6B6B6B;
 }
 .barContainer .bar{
+	display:inline-block;
 	background:url('assets/bar.png') repeat-x;
 	margin: 5px;
 	width: 350px;
@@ -40,6 +41,7 @@ body{
 	border:1px solid #6A6E5E;
 	line-height: 28px;
 	position: float;
+	
 }
 .barContainer .next{
 	background:url('assets/next.png') repeat-x;
@@ -53,6 +55,19 @@ body{
 }
 .barContainer .next:active{
 	background:url('assets/next-down.png') repeat-x;
+}
+.barContainer .settings{
+	background:url('assets/settings.png') repeat-x;
+	margin: 5px;
+	width: 33px;
+	height: 23px;
+	position: float;
+	float:right;
+	margin-left:10px;
+	
+}
+.barContainer .settings:active{
+	background:url('assets/settings-down.png') repeat-x;
 }
 .typer{
 	margin:0px;
@@ -80,10 +95,15 @@ body{
 	width:99%;
 	height:100%;
 	position: fixed;
-	opacity:0.0;
+	opacity:0.0;1
 }
-
+.wpm{
+	text-align:middle;
+}
 .clear
  {
       clear: both;
+}
+.dropdown-menu {
+    float:right;
 }
