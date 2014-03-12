@@ -18,6 +18,9 @@ body{
 #written .wrong, #ordatak .wrong{
 	color: #F00;
 }
+#written #space, #ordatak #space{
+	border-bottom: 10px solid #F00;
+}
 #written .selected, #ordatak .selected{
 	color: #0059B3;
 	border-bottom: 10px solid #0059B3;
@@ -40,7 +43,7 @@ body{
 	margin-right:auto;
 	border:1px solid #6A6E5E;
 	line-height: 28px;
-	position: float;
+	position: absolute;
 	
 }
 .barContainer .next{
@@ -69,25 +72,55 @@ body{
 .barContainer .settings:active{
 	background:url('assets/settings-down.png') repeat-x;
 }
+.barContainer .fullscreen{
+	background:url('assets/fullscreen.png') repeat-x;
+	margin: 5px;
+	width: 33px;
+	height: 23px;
+	position: float;
+	float:right;
+	margin-left:10px;
+	
+}
+.barContainer .fullscreen:active{
+	background:url('assets/fullscreen-down.png') repeat-x;
+}
 .typer{
 	margin:0px;
 	padding:0px;
-	width:100%;
+	width:70%;
 	height:100%;
 	position: float;
-	float:left;
+	float:right;
 }
 .stats{
 	display:block;
 	margin:0px;
-	padding:0px;
+	padding:30px;
 	width:30%;
 	height:100%;
-	position: float;
+	position: absolute;
 	float:right;
-	background-color:#bbb;
+	background-color:#DFDFDF;
 	min-height: 100%; /* Mindesthöhe für moderne Browser */
-   
+	color:#636363;
+	left: -40%;
+}
+.statsP{
+	font-weight: bold;
+}
+.startAgain{
+	background:url('assets/retry.png') repeat-x;
+	margin: 5px;
+	width: 66px;
+	height: 46px;
+	position: float;
+	float:left;
+	margin-left:10px;
+	line-height: 28px;
+}
+.startAgain:active{
+	background:url('assets/retry-down.png') repeat-x;
 }
 .inputter{
 	margin-left:auto;
@@ -95,10 +128,12 @@ body{
 	width:99%;
 	height:100%;
 	position: fixed;
-	opacity:0.0;1
+	opacity:0.0;
 }
 .wpm{
-	text-align:middle;
+	display:block;
+	text-align: center;
+
 }
 .clear
  {
@@ -106,4 +141,47 @@ body{
 }
 .dropdown-menu {
     float:right;
+}
+#progressbar{
+	display:none;
+	margin-top: 10px;
+	width: 0%;
+	background-color: rgb(185, 196, 194);
+	height: 10px;
+}
+.settingsView{
+	position: absolute;
+	right: 4px;
+	top: 27px;
+	background-color: #E6E6E6;
+	width: 209px;
+	border: 1px solid #AEAEAE;
+	border-radius: 5px;
+	display:none;
+	z-index: 1000;
+}
+.settingsView ul{
+	list-style-type: none;
+	padding: 0px 10px 0px 10px;
+}
+.settingsView li:hover{
+	
+}
+.reklama{
+	position: absolute;
+	bottom: 0px;
+	height: 60px;
+	width: 100%;
+	background-color: #BFBFBF;
+}
+.reklama img{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+#stats{
+	display:none;
+}
+.settingsOption{
+	border-bottom:1px solid;
 }

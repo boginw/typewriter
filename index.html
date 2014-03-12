@@ -1,10 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
+
 <head>
 	<title>Typewriter</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	
-
 </head>
 
 <body>
@@ -12,24 +11,65 @@
 		<div class="barContainer">
 			<div class="next"></div>
 			<div class="bar">
-				<div id="wpm"></div>
+				<div class="wpm">Tip: trýst á <b>Enter</b> fyri at byrja.</div>
 				<div id="progressbar"></div>
 			</div>
 			<div class="settings"></div>
+			<div class="fullscreen"></div>
+			<div class="settingsView">
+				<ul>
+					<li class="settingsOption"><span class="settingsOption" id="wpmStat">Orð um minnutin</span></li>
+					<li class="settingsOption"><span class="settingsOption" id="pntStat">Stig</span></li>
+					<li class="settingsOption"><span class="settingsOption" id="engrish">Skift millum Ensk/Føroysk
+							orðatøk</span></li>
+				</ul>
+			</div>
 		</div>
 		<div class="clear"></div>
 		<div class="deus">
 			<div class="typer">
-				<input class="inputter" id="text" type="text" />
+				<input class="inputter" id="text" type="text" value="" />
 				<div id="ordatak">TypeWriter</div>
 				<div id="written"></div>
 			</div>
+			<div class="stats">
+				<div id="welcome">
+					<div class="statsP">Vælkomin til TypeWriter</div>
+					<hr />
+					<ul class="info">
+						<li>
+							<p>Lærur teg at skriva so skjótt ið til ber.</p>
+						</li>
+						<li>
+							<p>Loyvur teg at kappast ímóti vinfólki.</p>
+						</li>
+						<li>
+							<p>Nýtur tey kendastu Føroysku orðatøkini.</p>
+						</li>
+					</ul>
+
+				</div>
+				<div id="stats">
+					<div class="statsP">Ferð:</div>
+					<div class="statsWPM"></div>
+					<div class="statsP">Neyvleiki:</div>
+					<div class="statsFailRate"></div>
+					<div class="statsP">Stig:</div>
+					<div class="statsPoints"></div>
+					<div class="startAgain"></div>
+				</div>
+			</div>
+			<div class="reklama"></div>
+			<div id="status"></div>
 		</div>
 	</div>
-</body>
-</html>
 
-<script src="js/jquery.js"></script>
-<script src="js/flowtype.js"></script>
-<script src="js/stopwatch.js"></script>
-<script src="main.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/flowtype.js"></script>
+	<script src="js/stopwatch.js"></script>
+	<script src="js/adcontroller.js"></script>
+	<script src="js/dbctrl.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
