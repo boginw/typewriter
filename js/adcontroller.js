@@ -6,7 +6,7 @@ function refreshAd(){
 	});
 	console.log('Advert refreshed');
 }
-if(true){
+if(false){
 	adTime.onTick =function(){
 		if(adTime.getElapsed()['seconds'] >= 50){
 			adTime.setElapsed(0,0,0);

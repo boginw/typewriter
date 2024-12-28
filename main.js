@@ -1,6 +1,5 @@
 ﻿let string = "";
 let counter = 0;
-let input = document.getElementById("text");
 let newQuote;
 let ordatak = string;
 let reference = string;
@@ -12,6 +11,13 @@ let sessionCount = 0;
 let tempsessionCount = 0;
 let stopped = true;
 let w = new Stopwatch();
+
+const input = document.getElementById("text");
+const statsDialog = document.querySelector("#stats-dialog");
+
+document
+  .querySelector("#stats-dialog .close")
+  .addEventListener("click", () => statsDialog.close());
 
 window.onload = function () {
   let text_input = document.getElementById("text");
@@ -226,29 +232,24 @@ document.addEventListener(
   false
 );
 
-document.addEventListener(
-  "click",
-  function (e) {
-    switch (e.toElement.className) {
-      case "settings":
-        break;
-      case "fullscreen":
-        if (chrome.app.window.current().isFullscreen()) {
-          chrome.app.window.current().restore();
-        } else {
-          chrome.app.window.current().fullscreen();
-        }
-        break;
-      case "next":
-        newOrdatak();
-        break;
-      default:
-        console.log(e.target.className);
-        break;
-    }
-  },
-  false
-);
+document.querySelector(".fullscreen").addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  newOrdatak();
+});
+
+function showStats(type) {
+  statsDialog.querySelector(".info").innerHTML =
+    type == "wpm" ? "Orð um minnutin" : "Stig";
+  getWPMs(() => generateChart(type));
+  statsDialog.showModal();
+}
 
 $(document).click(function (event) {
   if ($(event.target).attr("class") == "settings") {
@@ -265,14 +266,10 @@ $(document).click(function (event) {
   } else {
     switch ($(event.target).attr("id")) {
       case "wpmStat":
-        chrome.app.window.create("stats.html", { id: "wpm" }, function () {});
+        showStats("wpm");
         break;
       case "pntStat":
-        chrome.app.window.create(
-          "stats.html",
-          { id: "points" },
-          function () {}
-        );
+        showStats("points");
         break;
       case "engrish":
         if (quotes) {
@@ -280,8 +277,7 @@ $(document).click(function (event) {
           w.stop();
           newOrdatak();
         } else {
-          quotes = true;
-          w.stop();
+          alert("Hetta virkar tíverri ikki longur");
           newOrdatak();
         }
         break;
@@ -318,9 +314,7 @@ Array.prototype.compare = function (array) {
   }
   return true;
 };
-function looper() {
-  setTimeout(looper, 1);
-}
+
 $(".startAgain").click(function () {
   newOrdatak();
 });
@@ -336,10 +330,6 @@ function resize() {
     fontRatio: 10,
     lineRatio: 1.45,
   });
-  $(".info").flowtype({
-    fontRatio: 15,
-    lineRatio: 1,
-  });
   $(".bar").css({ left: $(window).width() / 2 - $(".bar").width() / 2 + "px" });
 }
 resize();
@@ -349,5 +339,4 @@ $(window).resize(function () {
 $.get("assets/ordatok.txt", function (list) {
   ordatok = list;
   ordatok = ordatok.split(/[\n]/);
-  looper();
 });
